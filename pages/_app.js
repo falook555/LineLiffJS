@@ -19,8 +19,8 @@ function MyApp({ Component, pageProps }) {
       }
 
       if (!liff.isLoggedIn()) {
-        liff.login()
-        liff.closeWindow()
+        liff.login({ redirectUri : 'https://queue.diligentsoftinter.com/myprofile' })
+        
       }
     }
     fetchData()

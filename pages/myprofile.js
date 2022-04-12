@@ -6,6 +6,7 @@ const Myprofile = () => {
 
     useEffect(() => {
         // console.log(i)
+        localStorage.setItem('path', 'myprofile');
         async function getData() {
             const liff = (await import('@line/liff')).default
             await liff.ready
