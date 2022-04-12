@@ -14,7 +14,7 @@ const Test = () => {
         getData()
     }, [])
     return (
-        <div>  {profile.userId == undefined ? 'Loading.....' : 'test'} </div>
+        <div> test</div>
     )
 }
 
