@@ -5,6 +5,7 @@ const Test = () => {
     useEffect(() => {
 
         localStorage.setItem('path', 'test');
+
         async function getData() {
             const liff = (await import('@line/liff')).default
             await liff.ready
@@ -12,6 +13,11 @@ const Test = () => {
             setProfile(profile)
         }
         getData()
+
+        if (!liff.isLoggedIn()) {
+            liff.login()
+        }
+
     }, [])
     return (
         <div> test</div>
