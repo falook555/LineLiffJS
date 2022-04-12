@@ -13,11 +13,11 @@ const Test = () => {
         }
 
         console.log(profile.userId)
-
+alert(profile.userId)
         getData()
     }, [])
   return (
-    <div>  {profile.userId == '' ? '' : 'test'} </div>
+    <div>  {profile.userId == 'undefined' ? '' : 'test'} </div>
   )
 }
 
