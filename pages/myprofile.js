@@ -6,15 +6,18 @@ const Myprofile = () => {
 
     useEffect(() => {
         // console.log(i)
-        async function getData() {
-            const liff = (await import('@line/liff')).default
-            await liff.ready
-            const profile = await liff.getProfile()
-            setProfile(profile)
-        }
+
 
         getData()
     }, [])
+
+
+    const getData = async () => {
+        const liff = (await import('@line/liff')).default
+        await liff.ready
+        const profile = await liff.getProfile()
+        setProfile(profile)
+    }
 
 
     return (
