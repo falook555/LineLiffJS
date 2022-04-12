@@ -12,6 +12,8 @@ const Test = () => {
             setProfile(profile)
         }
 
+        console.log(profile.userId)
+
         getData()
     }, [])
   return (
