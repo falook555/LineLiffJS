@@ -20,6 +20,7 @@ function MyApp({ Component, pageProps }) {
 
       if (!liff.isLoggedIn()) {
         liff.login()
+        liff.closeWindow()
       }
     }
     fetchData()
