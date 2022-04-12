@@ -11,7 +11,6 @@ export default function Home() {
   useEffect(() => {
 
     let path = localStorage.getItem('path')
-    alert(profile)
     if (path == 'test') {
       router.push('/test')
     }
