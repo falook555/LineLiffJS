@@ -19,7 +19,9 @@ function MyApp({ Component, pageProps }) {
       }
 
       if (!liff.isLoggedIn()) {
-        liff.login({ redirectUri : 'https://queue.diligentsoftinter.com/myprofile' })
+        let path  = localStorage.getItem('path')
+        
+        liff.login({ redirectUri : `https://queue.diligentsoftinter.com/${path}` })
         
       }
     }
