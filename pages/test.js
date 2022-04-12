@@ -3,21 +3,27 @@ const Test = () => {
     const [profile, setProfile] = useState({})
 
     useEffect(() => {
-        // console.log(i)
+       
         localStorage.setItem('path', 'test');
         async function getData() {
             const liff = (await import('@line/liff')).default
+
+            if (!liff.isLoggedIn()) {
+        
+                liff.login({ redirectUri : `https://queue.diligentsoftinter.com/test` })
+                
+              }
+
+
             await liff.ready
             const profile = await liff.getProfile()
             setProfile(profile)
         }
 
-        console.log(profile.userId)
-alert(profile.userId)
         getData()
     }, [])
   return (
-    <div>  {profile.userId == 'undefined' ? '' : 'test'} </div>
+    <div>  test </div>
   )
 }
 
