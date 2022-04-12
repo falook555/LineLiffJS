@@ -15,14 +15,7 @@ const Test = () => {
     }, [])
     return (
 
-        <>
-        {profile.userId == undefined ? '' : 
-        
-        <section>
-            <h1>55555555555555555</h1>
-        </section>
-        }
-        </>
+        <>sdsds</>
     )
 }
 
