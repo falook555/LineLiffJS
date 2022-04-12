@@ -11,13 +11,12 @@ const Test = () => {
             await liff.ready
             const profile = await liff.getProfile()
             setProfile(profile)
+
+            if (!liff.isLoggedIn()) {
+                liff.login()
+            }
         }
         getData()
-
-        if (!liff.isLoggedIn()) {
-            liff.login()
-        }
-
     }, [])
     return (
         <div> test</div>
