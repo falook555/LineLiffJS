@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-
-const liffId = process.env.NEXT_PUBLIC_LIFF_ID
 const Test = () => {
     const [profile, setProfile] = useState({})
 
@@ -9,29 +7,17 @@ const Test = () => {
         localStorage.setItem('path', 'test');
         async function getData() {
             const liff = (await import('@line/liff')).default
-            try {
-                await liff.init({ liffId })
-            }
-            catch (error) {
-                console.error('liff error', error.message)
-            }
-
-            if (!liff.isLoggedIn()) {
-
-                liff.login({ redirectUri: `https://queue.diligentsoftinter.com/test` })
-
-            }
-
-
             await liff.ready
             const profile = await liff.getProfile()
             setProfile(profile)
         }
 
+        console.log(profile.userId)
+        alert(profile.userId)
         getData()
     }, [])
     return (
-        <div>  test </div>
+        <div>  {profile.userId == undefined ? 'Loading.....' : 'test'} </div>
     )
 }
 
