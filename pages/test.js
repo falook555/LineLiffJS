@@ -11,9 +11,6 @@ const Test = () => {
             const profile = await liff.getProfile()
             setProfile(profile)
         }
-
-        console.log(profile.userId)
-        alert(profile.userId)
         getData()
     }, [])
     return (
