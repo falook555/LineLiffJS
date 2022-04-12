@@ -1,39 +1,26 @@
-import '../styles/globals.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import React, { useEffect } from 'react'
+import Head from 'next/head'
+import Image from 'next/image'
+import styles from '../styles/Home.module.css'
 import { useRouter } from 'next/router'
+import React, { useEffect } from 'react'
 
-const liffId = process.env.NEXT_PUBLIC_LIFF_ID
 
-function MyApp({ Component, pageProps }) {
+export default function Home() {
+  const router = useRouter()
 
-    useEffect(() => {
-        const router = useRouter()
-        const fetchData = async () => {
-            const liff = (await import('@line/liff')).default
+  useEffect(() => {
 
-            try {
-                await liff.init({ liffId })
-            }
-            catch (error) {
-                console.error('liff error', error.message)
-            }
-
-            if (!liff.isLoggedIn()) {
-                liff.login()
-            } else {
-                let path = localStorage.getItem('path')
-                if (path == 'test') {
-                    router.push('/test')
-                } else {
-                    router.push('/')
-                }
-            }
-        }
-        fetchData()
-    }, [])
-
-    return <Component {...pageProps} />
+    let path = localStorage.getItem('path')
+    alert(path)
+    if (path == 'test') {
+      router.push('/test')
+    }
+    else if(path == 'myprofile'){
+      router.push('/myprofile')
+    }
+    else {
+      router.push('/')
+    }
+  }, [])
+  return (<></>)
 }
-
-export default MyApp

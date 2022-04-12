@@ -1,34 +1,36 @@
-// import '../styles/globals.css'
-// import 'bootstrap/dist/css/bootstrap.min.css'
-// import React, { useEffect } from 'react'
+import '../styles/globals.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import React, { useEffect } from 'react'
 
-// const liffId = process.env.NEXT_PUBLIC_LIFF_ID
+const liffId = process.env.NEXT_PUBLIC_LIFF_ID
 
-// function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
 
 
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       const liff = (await import('@line/liff')).default
+  useEffect(() => {
+    const fetchData = async () => {
+      const liff = (await import('@line/liff')).default
 
-//       try {
-//         await liff.init({ liffId })
-//       }
-//       catch (error) {
-//         console.error('liff error', error.message)
-//       }
+      try {
+        await liff.init({ liffId })
+      }
+      catch (error) {
+        console.error('liff error', error.message)
+      }
 
-//       if (!liff.isLoggedIn()) {
-//         let path  = localStorage.getItem('path')
+      if (!liff.isLoggedIn()) {
+        // let path  = localStorage.getItem('path')
         
-//         liff.login({ redirectUri : `https://queue.diligentsoftinter.com/${path}` })
+        // liff.login({ redirectUri : `https://queue.diligentsoftinter.com/${path}` })
         
-//       }
-//     }
-//     fetchData()
-//   }, [])
+        liff.login()
+        
+      }
+    }
+    fetchData()
+  }, [])
   
-//   return <Component {...pageProps} />
-// }
+  return <Component {...pageProps} />
+}
 
-// export default MyApp
+export default MyApp
