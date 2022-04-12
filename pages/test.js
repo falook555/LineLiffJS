@@ -15,7 +15,7 @@ const Test = () => {
         getData()
     }, [])
   return (
-    <div>test</div>
+    <div>  {profile.userId == '' ? '' : 'test'} </div>
   )
 }
 
