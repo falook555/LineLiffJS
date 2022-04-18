@@ -14,12 +14,17 @@ export default function Home() {
     if (path == 'test') {
       router.push('/test')
     }
-    else if(path == 'myprofile'){
+    else if (path == 'myprofile') {
       router.push('/myprofile')
     }
     else {
       router.push('/')
     }
   }, [])
-  return (<></>)
+  return (
+  
+  <>
+  test index
+  </>
+  )
 }
