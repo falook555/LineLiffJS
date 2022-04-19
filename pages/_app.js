@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }) {
         
         liff.login({ redirectUri : `https://queue.diligentsoftinter.com/${path}` })
         
-        liff.login()
+
         
       }
     }
