@@ -22,9 +22,8 @@ export default function Home() {
     }
   }, [])
   return (
-  
-  <>
-  test index
-  </>
+    <div>
+      test index
+    </div>
   )
 }
