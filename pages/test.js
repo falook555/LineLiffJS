@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from 'react'
+
 const Test = () => {
-    const [profile, setProfile] = useState({})
+    const [count, setCount] = useState(0)
 
     useEffect(() => {
+        console.log('1234')
+        document.title = `You clicked ${count} times`
+    })
 
-        localStorage.setItem('path', 'test');
-        async function getData() {
-            const liff = (await import('@line/liff')).default
-            await liff.ready
-            const profile = await liff.getProfile()
-            setProfile(profile)
-        }
-        getData()
-    }, [])
     return (
-
-        <>sdsds</>
+        <div>
+            {count == 1 ? <button onClick={() => setCount(count + 1)}>Click me</button> : ''}
+            <p>You clicked {count} times</p>
+            {}
+            
+        </div>
     )
 }
 

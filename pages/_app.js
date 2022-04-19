@@ -19,9 +19,9 @@ function MyApp({ Component, pageProps }) {
       }
 
       if (!liff.isLoggedIn()) {
-        // let path  = localStorage.getItem('path')
+        let path  = localStorage.getItem('path')
         
-        // liff.login({ redirectUri : `https://queue.diligentsoftinter.com/${path}` })
+        liff.login({ redirectUri : `https://queue.diligentsoftinter.com/${path}` })
         
         liff.login()
         
