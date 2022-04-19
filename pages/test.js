@@ -5,6 +5,7 @@ const Test = () => {
 
     useEffect(() => {
         console.log('1234')
+        localStorage.setItem('path', 'test');
         document.title = `You clicked ${count} times`
     })
 
